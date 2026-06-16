@@ -15,6 +15,7 @@ body{
     background:#050816;
     color:white;
     overflow-x:hidden;
+
 }
 
 /* Navbar */
@@ -30,6 +31,7 @@ nav{
     background:rgba(0,0,0,0.4);
     backdrop-filter:blur(12px);
     z-index:1000;
+
 }
 
 .logo{
@@ -54,6 +56,25 @@ nav ul li a:hover{
     color:#22c55e;
 }
 
+nav ul li a{
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#22c55e;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
 /* Hero Section */
 
 .hero{
@@ -66,6 +87,14 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
+}
+
+.hero-content h1{
+    font-size:60px;
+    color:white;
+    text-shadow:
+        0 0 10px rgba(34,197,94,0.5),
+        0 0 25px rgba(34,197,94,0.3);
 }
 
 .overlay{
@@ -87,12 +116,49 @@ nav ul li a:hover{
     color:#fbbf24;
 }
 
+.hero-content h1{
+    text-shadow:
+    0 0 10px rgba(255,215,0,0.4),
+    0 0 20px rgba(255,215,0,0.3),
+    0 0 40px rgba(255,215,0,0.2);
+}
+
 .hero-content p{
     font-size:1.2rem;
     max-width:700px;
     margin:auto;
     margin-bottom:30px;
     line-height:1.8;
+}
+
+.hero-content h1{
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-content p{
+    animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
 }
 
 /* Buttons */
@@ -133,6 +199,40 @@ nav ul li a:hover{
     border-radius:20px;
     text-align:center;
     transition:.4s;
+}
+
+.stat-card{
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.card,
+.stat-card{
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+@keyframes floatCard{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
 }
 
 .card:hover{
@@ -215,6 +315,15 @@ nav ul li a:hover{
     margin-bottom:15px;
 }
 
+.card{
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(34,197,94,0.2);
+}
+
 /* Footer */
 
 footer{
@@ -256,7 +365,10 @@ footer h3{
     color:white;
     font-size:28px;
     z-index:1000;
+
 }
+
+
 
 /* Responsive */
 
@@ -537,3 +649,30 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 .menu-table tr:hover{
 background:rgba(255,255,255,0.05);
 }
+
+body::before{
+content:"";
+position:fixed;
+top:10%;
+left:-100px;
+width:300px;
+height:300px;
+background:rgba(34,197,94,0.08);
+border-radius:50%;
+filter:blur(100px);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:10%;
+right:-100px;
+width:350px;
+height:350px;
+background:rgba(251,191,36,0.08);
+border-radius:50%;
+filter:blur(100px);
+z-index:-1;
+}
+

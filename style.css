@@ -676,3 +676,28 @@ filter:blur(100px);
 z-index:-1;
 }
 
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin:80px 0;
+    flex-wrap:wrap;
+}
+
+.stat{
+    text-align:center;
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+    min-width:220px;
+}
+
+.stat h2{
+    font-size:3rem;
+    color:#fbbf24;
+}
+
+.stat p{
+    margin-top:10px;
+    font-size:1rem;
+}

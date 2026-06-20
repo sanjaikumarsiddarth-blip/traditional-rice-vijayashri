@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        Traditional Rice Vijayashri 🌾
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="whatsapp-order.html">WhatsApp Order</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="menu.html">Menu</a></li>
+    </ul><!-- Same navbar as other pages -->
+</nav>
+
+<section class="whatsapp-order">
+
+    <h1>Place Order via WhatsApp</h1>
+
+    <p>
+        Fill the details below and continue directly to WhatsApp.
+    </p>
+
+    <form id="whatsappForm">
+
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+
+        <input type="text" id="location" placeholder="City / Location" required>
+
+        <select id="rice">
+            <option>Traditional Rice</option>
+            <option>Rice Flour</option>
+            <option>Millets</option>
+            <option>Protein Mix</option>
+            <option>Sathu Maavu</option>
+            <option>Health Powder</option>
+        </select>
+
+        <input type="text"
+        id="quantity"
+        placeholder="Quantity (Kg)">
+
+        <textarea
+        id="message"
+        placeholder="Additional Requirements"></textarea>
+
+        <button
+        type="button"
+        onclick="sendWhatsApp()">
+            Continue to WhatsApp
+        </button>
+
+    </form>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

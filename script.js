@@ -119,12 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (window.heroTimeline) {
                         window.heroTimeline.play();
                     }
+                    
+                    // Initialize the ambient organic background particles loop
+                    initAmbientBackground();
                 }
             });
         }, 1500);
     } else {
         // Preloader already shown, fade in body content immediately
         gsap.to("body", { opacity: 1, duration: 0.5, ease: "power2.out" });
+        // Initialize the ambient organic background particles loop immediately
+        initAmbientBackground();
     }
 
     // ==========================================================================
@@ -382,6 +387,125 @@ document.addEventListener("DOMContentLoaded", () => {
                 nav.classList.remove("scrolled");
             }
         });
+    }
+
+    // ==========================================================================
+    // AMBIENT ORGANIC PARTICLE BACKGROUND (CANVAS 60FPS)
+    // ==========================================================================
+    function initAmbientBackground() {
+        // Create canvas element dynamically
+        const canvas = document.createElement("canvas");
+        canvas.id = "ambient-canvas";
+        document.body.prepend(canvas);
+
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+        let animationId;
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        // Check user preferences for reduced motion
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) {
+            // Keep background blank / transparent to respect system settings
+            return;
+        }
+
+        // Particle configuration based on screen sizes
+        const getParticleCount = () => {
+            return window.innerWidth < 768 ? 40 : 120;
+        };
+
+        const colors = [
+            "rgba(212, 175, 55, ",   // Gold
+            "rgba(245, 213, 138, ",  // Light Warm Gold
+            "rgba(34, 197, 94, ",    // Fresh Green
+            "rgba(44, 110, 69, "     // Organic Dark Green
+        ];
+
+        class Particle {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * width;
+                this.y = initial ? Math.random() * height : -20; // Respawn offscreen
+                this.sizeX = Math.random() * 2 + 1.2; // Width of grain
+                this.sizeY = this.sizeX * (Math.random() * 0.7 + 1.5); // Length of grain (capsule/ellipse)
+                this.speedY = Math.random() * 0.35 + 0.15; // Vertical fall speed
+                this.speedX = (Math.random() - 0.4) * 0.2; // Sideways drift
+                this.opacity = Math.random() * 0.4 + 0.15; // Random alpha opacity
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.angle = Math.random() * Math.PI * 2; // Grain angle
+                this.spinSpeed = (Math.random() - 0.5) * 0.012; // Slow rotation speed
+                this.parallaxFactor = this.sizeX * 0.14; // Larger grains move faster on scroll
+            }
+
+            update(scrollTop) {
+                this.y += this.speedY;
+                // Add soft sine breeze oscillation
+                this.x += this.speedX + Math.sin(this.y * 0.006) * 0.04;
+                this.angle += this.spinSpeed;
+
+                // Adjust actual coordinate using parallax offset
+                const currentY = this.y + scrollTop * this.parallaxFactor;
+
+                // Respawn if limits are exceeded
+                if (currentY > height + 20 || this.x < -20 || this.x > width + 20) {
+                    this.reset(false);
+                }
+            }
+
+            draw(scrollTop) {
+                const currentY = this.y + scrollTop * this.parallaxFactor;
+
+                ctx.save();
+                ctx.translate(this.x, currentY);
+                ctx.rotate(this.angle);
+                ctx.fillStyle = this.color + this.opacity + ")";
+                
+                // Draw capsule/rice grain shape
+                ctx.beginPath();
+                ctx.ellipse(0, 0, this.sizeX, this.sizeY, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        const initParticles = () => {
+            particles = [];
+            const count = getParticleCount();
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        };
+
+        const render = () => {
+            ctx.clearRect(0, 0, width, height);
+
+            const scrollTop = window.scrollY;
+
+            particles.forEach(p => {
+                p.update(scrollTop);
+                p.draw(scrollTop);
+            });
+
+            animationId = requestAnimationFrame(render);
+        };
+
+        const handleResize = () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initParticles();
+        };
+
+        // Event listeners
+        window.addEventListener("resize", handleResize);
+
+        // Run
+        initParticles();
+        render();
     }
 });
 

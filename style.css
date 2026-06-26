@@ -101,6 +101,20 @@ h1, h2, h3, h4, .logo, .menu-title {
 }
 
 /* ==========================================================================
+   AMBIENT WATERMARK BACKGROUND (CANVAS CONTAINER)
+   ========================================================================== */
+#ambient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+}
+
+/* ==========================================================================
    PREMIUM PRELOADER STYLE
    ========================================================================== */
 #preloader {

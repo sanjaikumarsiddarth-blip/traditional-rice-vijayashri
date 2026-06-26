@@ -1,130 +1,178 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-    <title>Menu - Traditional Rice Vijayashri</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Menu & Prices - Traditional Rice Vijayashri</title>
+    <meta name="description" content="View approximate pricing and seasonal availability for traditional organic rice varieties and flours. Preserved and prepared in Coimbatore, Tamil Nadu.">
+    <meta name="keywords" content="organic rice prices, Seeraga Samba price, Mappillai Samba price, Karuppu Kavuni cost, organic grain flours">
+    <script>document.documentElement.classList.add('js-enabled');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">
-        Traditional Rice Vijayashri 🌱
-    </div>
+    <!-- Header Navigation -->
+    <nav>
+        <a href="index.html" class="logo">🌾 Traditional Rice Vijayashri</a>
+        <button class="menu-toggle" aria-label="Toggle Menu" id="menuToggleBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="whatsapp-order.html">WhatsApp Order</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+        </ul>
+    </nav>
 
+    <!-- Important Notice Box -->
+    <main>
+        <section class="notice-box">
+            <h3>⚠️ Important Notice</h3>
+            <p>
+                Prices shown below are approximate and may change based on market conditions,
+                seasonal availability, and stock status.
+            </p>
+            <p>
+                Some rice varieties may not be available throughout the year due to cultivation seasons.
+            </p>
+            <p>
+                After placing an order, we will contact you directly to confirm product availability,
+                final pricing, quantities, and delivery details.
+            </p>
+        </section>
 
-<ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="product.html">Products</a></li>
-    <li><a href="recipes.html">Recipes</a></li>
-    <li><a href="order.html">Order</a></li>
-    <li><a href="whatsapp-order.html">WhatsApp Order</a></li>
-    <li><a href="achievements.html">Achievements</a></li>
-    <li><a href="menu.html">Menu</a></li>
-</ul>
+        <!-- Table title -->
+        <h2 class="menu-title">🌾 Product Catalogue & Approximate Prices</h2>
 
+        <!-- Responsive Table Container -->
+        <div class="table-responsive">
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Approx. Price (₹ / kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sivan Samba</td><td>₹90</td></tr>
+                    <tr><td>Thanga Samba</td><td>₹90</td></tr>
+                    <tr><td>Ponmani</td><td>₹75</td></tr>
+                    <tr><td>Vellakar</td><td>₹100</td></tr>
+                    <tr><td>Karuppu Kavuni</td><td>₹170</td></tr>
+                    <tr><td>60 Aam Kuruvai</td><td>₹110</td></tr>
+                    <tr><td>Thooyamalli</td><td>₹110</td></tr>
+                    <tr><td>Seeraga Samba</td><td>₹170</td></tr>
+                    <tr><td>Kichali Samba</td><td>₹110</td></tr>
+                    <tr><td>Karung Kuruvai</td><td>₹150</td></tr>
+                    <tr><td>Poongar</td><td>₹120</td></tr>
+                    <tr><td>Rathasali</td><td>₹130</td></tr>
+                    <tr><td>Kattuyanam</td><td>₹130</td></tr>
+                    <tr><td>Mappillai Samba</td><td>₹120</td></tr>
+                    <tr><td>Mani Samba</td><td>₹130</td></tr>
+                    <tr><td>Milagu Samba</td><td>₹130</td></tr>
+                    <tr><td>Kothamalli Samba</td><td>₹130</td></tr>
+                    <tr><td>Ellupaipoo Samba</td><td>₹210</td></tr>
+                    <tr><td>Annamalagi</td><td>₹110</td></tr>
+                    <tr><td>Periya Manalvaari</td><td>₹110</td></tr>
+                    <tr><td>Ambai</td><td>₹90</td></tr>
+                    <tr><td>Nattu Pasumathy</td><td>₹130</td></tr>
+                    <tr><td>Seeraga Samba Boiled</td><td>₹180</td></tr>
+                    <tr><td>Maisoor Malli Boiled</td><td>₹110</td></tr>
+                    <tr><td>Nellaiappar Samba</td><td>₹130</td></tr>
+                    <tr><td>Adudurai Idly Rice</td><td>₹85</td></tr>
+                    <tr><td>Palkudavalai Raw Rice</td><td>₹110</td></tr>
+                    <tr><td>Karnool Samba Raw Rice</td><td>₹110</td></tr>
+                    <tr><td>Indharani Raw Rice</td><td>₹120</td></tr>
+                    <tr><td>Kichali Samba Raw Rice</td><td>₹110</td></tr>
+                    
+                    <tr><td>Varagu (Millet)</td><td>₹110</td></tr>
+                    <tr><td>Samai (Millet)</td><td>₹130</td></tr>
+                    <tr><td>Kuthirai Vaali (Millet)</td><td>₹130</td></tr>
+                    <tr><td>Thinai (Millet)</td><td>₹105</td></tr>
+                    <tr><td>Nattu Kambu (Millet)</td><td>₹100</td></tr>
+                    <tr><td>Nattu Ragi (Millet)</td><td>₹80</td></tr>
+                    <tr><td>Red Solam (Millet)</td><td>₹80</td></tr>
+                    <tr><td>White Solam (Millet)</td><td>₹80</td></tr>
+                    
+                    <tr><td>White Idiyappam Flour</td><td>₹160</td></tr>
+                    <tr><td>Mullaikattiya Ragi Flour</td><td>₹160</td></tr>
+                    <tr><td>Karuppu Kavuni Flour</td><td>₹250</td></tr>
+                    <tr><td>Roasted Karuppu Kavuni Flour</td><td>₹350</td></tr>
+                    <tr><td>Poongar Flour</td><td>₹200</td></tr>
+                    <tr><td>Kambu Flour</td><td>₹150</td></tr>
+                    <tr><td>Millets Flour</td><td>₹160</td></tr>
+                    <tr><td>Millets Dosa Mix</td><td>₹300</td></tr>
+                    <tr><td>Karuppu Ulundhu Mix</td><td>₹400</td></tr>
+                    <tr><td>Weight Loss Mix</td><td>₹500</td></tr>
+                    <tr><td>Nendhram Palam Flour</td><td>₹700</td></tr>
+                    <tr><td>Protein Mix Flour</td><td>₹500</td></tr>
+                    
+                    <tr><td>Kattuyanam Flakes</td><td>₹160</td></tr>
+                    <tr><td>Mappillai Samba Flakes</td><td>₹160</td></tr>
+                    <tr><td>Seeraga Samba Flakes</td><td>₹230</td></tr>
+                    <tr><td>Milagu Samba Flakes</td><td>₹180</td></tr>
+                    <tr><td>Karuppu Kavuni Flakes</td><td>₹220</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-</nav>
+        <!-- Center CTA Button -->
+        <div style="text-align: center; margin-bottom: 80px;">
+            <a href="order.html" class="btn">Proceed to Order</a>
+        </div>
+    </main>
 
-<div class="notice-box">
-    <h3>⚠️ Important Notice</h3>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Traditional Rice Vijayashri 🌾</h3>
+                <p>Preserving Tamil Nadu's heritage organic grains, promoting robust nutritional habits, and sharing ancestral food traditions for healthy living.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="menu.html">Product Price List</a></li>
+                    <li><a href="order.html">Place Order</a></li>
+                    <li><a href="whatsapp-order.html">WhatsApp Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>📍 Coimbatore, Tamil Nadu, India</p>
+                <p>📞 +91 8825668558</p>
+                <p>✉️ vijayashri1981@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Traditional Rice Vijayashri. All Rights Reserved. Preserving Heritage, Promoting Health.</p>
+        </div>
+    </footer>
 
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/918825668558" class="whatsapp" target="_blank" aria-label="Order on WhatsApp">📞</a>
 
-<p>
-    Prices shown below are approximate and may change based on market conditions,
-    seasonal availability and stock status.
-</p>
-
-<p>
-    Some rice varieties may not be available throughout the year.
-</p>
-
-<p>
-    After placing an order, we will contact you to confirm product availability,
-    final pricing, quantity and delivery details.
-</p>
-
-
-</div>
-
-<h2 class="menu-title">🌾 Product Menu & Approximate Prices</h2>
-
-<table class="menu-table">
-
-<tr>
-<th>Product Name</th>
-<th>Approx. Price (₹ / kg)</th>
-</tr>
-
-<tr><td>Sivan Samba</td><td>₹90</td></tr>
-<tr><td>Thanga Samba</td><td>₹90</td></tr>
-<tr><td>Ponmani</td><td>₹75</td></tr>
-<tr><td>Vellakar</td><td>₹100</td></tr>
-<tr><td>Karuppu Kavuni</td><td>₹170</td></tr>
-<tr><td>60 Aam Kuruvai</td><td>₹110</td></tr>
-<tr><td>Thooyamalli</td><td>₹110</td></tr>
-<tr><td>Seeraga Samba</td><td>₹170</td></tr>
-<tr><td>Kichali Samba</td><td>₹110</td></tr>
-<tr><td>Karung Kuruvai</td><td>₹150</td></tr>
-<tr><td>Poongar</td><td>₹120</td></tr>
-<tr><td>Rathasali</td><td>₹130</td></tr>
-<tr><td>Kattuyanam</td><td>₹130</td></tr>
-<tr><td>Mappillai Samba</td><td>₹120</td></tr>
-<tr><td>Mani Samba</td><td>₹130</td></tr>
-<tr><td>Milagu Samba</td><td>₹130</td></tr>
-<tr><td>Kothamalli Samba</td><td>₹130</td></tr>
-<tr><td>Ellupaipoo Samba</td><td>₹210</td></tr>
-<tr><td>Annamalagi</td><td>₹110</td></tr>
-<tr><td>Periya Manalvaari</td><td>₹110</td></tr>
-<tr><td>Ambai</td><td>₹90</td></tr>
-<tr><td>Nattu Pasumathy</td><td>₹130</td></tr>
-<tr><td>Seeraga Samba Boiled</td><td>₹180</td></tr>
-<tr><td>Maisoor Malli Boiled</td><td>₹110</td></tr>
-<tr><td>Nellaiappar Samba</td><td>₹130</td></tr>
-<tr><td>Adudurai Idly Rice</td><td>₹85</td></tr>
-<tr><td>Palkudavalai Raw Rice</td><td>₹110</td></tr>
-<tr><td>Karnool Samba Raw Rice</td><td>₹110</td></tr>
-<tr><td>Indharani Raw Rice</td><td>₹120</td></tr>
-<tr><td>Kichali Samba Raw Rice</td><td>₹110</td></tr>
-
-<tr><td>Varagu</td><td>₹110</td></tr>
-<tr><td>Samai</td><td>₹130</td></tr>
-<tr><td>Kuthirai Vaali</td><td>₹130</td></tr>
-<tr><td>Thinai</td><td>₹105</td></tr>
-<tr><td>Nattu Kambu</td><td>₹100</td></tr>
-<tr><td>Nattu Ragi</td><td>₹80</td></tr>
-<tr><td>Red Solam</td><td>₹80</td></tr>
-<tr><td>White Solam</td><td>₹80</td></tr>
-
-<tr><td>White Idiyappam Flour</td><td>₹160</td></tr>
-<tr><td>Mullaikattiya Ragi Flour</td><td>₹160</td></tr>
-<tr><td>Karuppu Kavuni Flour</td><td>₹250</td></tr>
-<tr><td>Roasted Karuppu Kavuni Flour</td><td>₹350</td></tr>
-<tr><td>Poongar Flour</td><td>₹200</td></tr>
-<tr><td>Kambu Flour</td><td>₹150</td></tr>
-<tr><td>Millets Flour</td><td>₹160</td></tr>
-<tr><td>Millets Dosa Mix</td><td>₹300</td></tr>
-<tr><td>Karuppu Ulundhu Mix</td><td>₹400</td></tr>
-<tr><td>Weight Loss Mix</td><td>₹500</td></tr>
-<tr><td>Nendhram Palam Flour</td><td>₹700</td></tr>
-<tr><td>Protein Mix Flour</td><td>₹500</td></tr>
-
-<tr><td>Kattuyanam Flakes</td><td>₹160</td></tr>
-<tr><td>Mappillai Samba Flakes</td><td>₹160</td></tr>
-<tr><td>Seeraga Samba Flakes</td><td>₹230</td></tr>
-<tr><td>Milagu Samba Flakes</td><td>₹180</td></tr>
-<tr><td>Karuppu Kavuni Flakes</td><td>₹220</td></tr>
-
-</table>
-
-<br>
-
-<center>
-    <a href="order.html" class="btn">Place Order</a>
-</center>
-
+    <!-- Lenis, GSAP, and ScrollTrigger CDN Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
